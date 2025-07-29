@@ -491,10 +491,46 @@ Si les points sont très dispersés, le modèle n’explique pas bien la variabl
 
 ## perform two feature linear regressions here:
 
+## perform two feature linear regressions here:
+
+# Variables
+X = df[['Aces','DoubleFaults']]
+Y = df[['Wins']]
+
+#plot data into training set and test set
+
+X_train, X_test,Y_train, Y_test = train_test_split(
+  X,
+  Y,
+  train_size= 0.8,
+  test_size = 0.2
+)
+
+#creation du model
+mlr_1 = LinearRegression()
+#entrainement du model
+mlr_1.fit(X_train,Y_train)
+#Affichage des coefficients
+b = mlr_1.intercept_
+m = mlr_1.coef_
+#prediction
+y_predicted = mlr_1.predict(X_test)
+print ("La prediction est : ",y_predicted)
+
+#Visualisation
+
+# Afficher la comparaison entre valeurs réelles (Y_test) et valeurs prédites (y_predicted)
+plt.scatter (Y_test,y_predicted, color = 'g',alpha = 0.4)
+plt.xlabel('Valeur reelle (Wins) ')
+plt.ylabel("Valeur predites (Wins)")
+plt.title('Prediction de Wins avec Aces et DoubleFaults')
+plt.grid(True)
+plt.legend()
+plt.show()
 
 
 
-
+'''======================================================================'''
 
 
 
@@ -513,7 +549,7 @@ Si les points sont très dispersés, le modèle n’explique pas bien la variabl
 
 ## perform multiple feature linear regressions here:
 
-
+'''======================================================================'''
 
 
 
@@ -581,3 +617,11 @@ Si les points sont très dispersés, le modèle n’explique pas bien la variabl
 # Si les points sont proches d’une droite diagonale, le modèle prédit bien.
 # Si les points sont très dispersés, le modèle prédit mal.
 # Un score R² proche de 1 indique un bon modèle.
+
+
+
+'''
+token_1_data_transforming:  Username :aiengineernlp  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   
+
+
+'''
