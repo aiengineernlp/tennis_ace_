@@ -515,7 +515,7 @@ b = mlr_1.intercept_
 m = mlr_1.coef_
 #prediction
 y_predicted = mlr_1.predict(X_test)
-print ("La prediction est : ",y_predicted)
+print ("La prediction est  ceci: ",y_predicted)
 
 #Visualisation
 
@@ -616,7 +616,7 @@ plt.show()
 #
 # Si les points sont proches d’une droite diagonale, le modèle prédit bien.
 # Si les points sont très dispersés, le modèle prédit mal.
-# Un score R² proche de 1 indique un bon modèle.
+# Un score R² proche de 1 indique un bon modèle
 
 
 
